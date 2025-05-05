@@ -1,0 +1,35 @@
+name: alphaprunerep
+channels:
+  - conda-forge       # put first so its arm64 builds win
+  - pytorch
+  - defaults
+platform: osx-arm64
+
+dependencies:
+  # ───────── core DL stack ─────────
+  - python=3.10
+  - pytorch           # includes MPS backend for Apple Silicon
+  - torchvision
+  - torchaudio
+
+  # ───────── Hugging Face & utils ─────────
+  - transformers=4.40.0
+  - accelerate
+  - sentencepiece
+  - einops
+
+  # ───────── datasets & evaluation ─────────
+  - datasets=2.18.0      # arm64 wheels are on conda‑forge
+  - evaluate
+
+  # ───────── pruning back‑ends (source build later) ───────
+  - git
+  - conda-build          # we’ll use this to conda‑build Wanda / SparseGPT
+
+  # ───────── math / metrics ─────────
+  - scipy
+  - numpy
+  - powerlaw
+  - tqdm
+  - pip                 # keep a pip fallback for things without Conda recipes
+
