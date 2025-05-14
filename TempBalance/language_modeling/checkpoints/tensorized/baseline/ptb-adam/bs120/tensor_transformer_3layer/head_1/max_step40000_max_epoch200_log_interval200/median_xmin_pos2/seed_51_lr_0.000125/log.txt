@@ -1,0 +1,113 @@
+Training on Single GPU......
+Training on Single GPU......
+Training on Single GPU......
+Training on Single GPU......
+====================================================================================================
+    - data : ../penn/
+    - dataset : ptb
+    - model : tensorized
+    - n_layer : 3
+    - n_head : 1
+    - d_head : 40
+    - d_embed : 256
+    - d_model : 256
+    - d_inner : 2100
+    - dropout : 0.3
+    - dropatt : 0.0
+    - init : normal
+    - emb_init : normal
+    - init_range : 0.1
+    - emb_init_range : 0.01
+    - init_std : 0.02
+    - proj_init_std : 0.01
+    - optim : adam
+    - lr : 0.000125
+    - mom : 0.0
+    - scheduler : cosine
+    - decay_rate : 0.5
+    - lr_min : 0.0
+    - clip : 0.25
+    - clip_nonemb : False
+    - max_step : 40000
+    - max_epoch : 200
+    - batch_size : 120
+    - batch_chunk : 1
+    - tgt_len : 32
+    - eval_tgt_len : 32
+    - ext_len : 0
+    - mem_len : 0
+    - not_tied : False
+    - seed : 51
+    - cuda : True
+    - div_val : 1
+    - pre_lnorm : False
+    - varlen : False
+    - multi_gpu : False
+    - log_interval : 200
+    - esd_interval : 200
+    - eval_interval : 1000
+    - work_dir : /Users/ethanwong-chassine/Desktop/25S/Research/TempBalance/language_modeling/checkpoints/tensorized/baseline/ptb-adam/bs120/tensor_transformer_3layer/head_1/max_step40000_max_epoch200_log_interval200/median_xmin_pos2/seed_51_lr_0.000125
+    - restart : False
+    - restart_dir : 
+    - debug : True
+    - same_length : False
+    - attn_type : 0
+    - clamp_len : -1
+    - eta_min : 0.0
+    - gpu0_bsz : 1
+    - max_eval_steps : -1
+    - sample_softmax : -1
+    - patience : 0
+    - finetune_v2 : False
+    - finetune_v3 : False
+    - static_loss_scale : 1
+    - dynamic_loss_scale : False
+    - xmin_pos : 2
+    - pl_fitting : median
+    - filter_zeros : False
+    - wdecay : 1.2e-06
+    - eps : 0.0001
+    - beta1 : 0.9
+    - beta2 : 0.999
+    - block_length : 4
+    - tied : True
+    - n_token : 10000
+    - n_all_param : 6715252
+    - n_nonemb_param : 4145172
+    - self_attention_param : 910968
+====================================================================================================
+#params = 6715252
+#non emb params = 4145172
+#self attention params = 910968
+total_loss: 71321.9489440918, total_len: 7744
+total_loss: 75762.8434753418, total_len: 8224
+total_loss: 67808.84344482422, total_len: 7360
+| Start of training | test loss  9.21 | test bpc 10020.69777
+| epoch   1 step      200 |    200 batches | lr 0.000125 | ms/batch 1027.49 | loss  7.05 | ppl  1153.481
+total_loss: 45585.3611907959, total_len: 7360
+total_loss: 50540.50280761719, total_len: 8224
+----------------------------------------------------------------------------------------------------
+| Eval   1 at step      200 | time: 217.18s | valid loss  6.19 | valid ppl   489.636
+----------------------------------------------------------------------------------------------------
+Best model and ESD saved.
+| epoch   2 step      400 |    158 batches | lr 0.000125 | ms/batch 776.33 | loss  6.07 | ppl   434.121
+total_loss: 42792.05157470703, total_len: 7360
+total_loss: 47412.83953857422, total_len: 8224
+----------------------------------------------------------------------------------------------------
+| Eval   2 at step      400 | time: 155.32s | valid loss  5.81 | valid ppl   335.002
+----------------------------------------------------------------------------------------------------
+Best model and ESD saved.
+| epoch   3 step      600 |    116 batches | lr 0.000125 | ms/batch 775.27 | loss  5.80 | ppl   330.161
+total_loss: 41431.70913696289, total_len: 7360
+total_loss: 45886.64025878906, total_len: 8224
+----------------------------------------------------------------------------------------------------
+| Eval   3 at step      600 | time: 154.88s | valid loss  5.63 | valid ppl   278.469
+----------------------------------------------------------------------------------------------------
+Best model and ESD saved.
+| epoch   4 step      800 |     74 batches | lr 0.000125 | ms/batch 767.95 | loss  5.66 | ppl   286.129
+total_loss: 40592.354751586914, total_len: 7360
+total_loss: 44928.80776977539, total_len: 8224
+----------------------------------------------------------------------------------------------------
+| Eval   4 at step      800 | time: 153.21s | valid loss  5.52 | valid ppl   248.456
+----------------------------------------------------------------------------------------------------
+Best model and ESD saved.
